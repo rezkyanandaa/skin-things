@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skin & Things — Beauty Store</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar"><div class="container top-inner"><span>✨ beauty essentials, delivered to you</span><span>Free shipping on selected orders</span></div></header>
+
+<nav class="nav container">
+  <a class="logo" href="#"><span>Skin</span> & Things</a>
+  <div class="navlinks">
+    <a href="#shop">Shop</a><a href="#categories">Categories</a><a href="#new">New In</a><a href="#bestseller">Best Sellers</a>
+  </div>
+  <div class="nav-actions"><button aria-label="Search" onclick="focusSearch()">⌕</button><button aria-label="Cart" onclick="openCart()">♡ <b id="cartCount">0</b></button></div>
+</nav>
+
+<main>
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">YOUR EVERYDAY BEAUTY EDIT</p>
+      <h1>Everything you love,<br><em>all in one place.</em></h1>
+      <p class="hero-text">Makeup, skincare, bodycare, haircare & lipcare — curated for your everyday glow.</p>
+      <a class="btn" href="#shop">Shop the collection →</a>
+    </div>
+    <div class="hero-art">
+      <img src="https://images.unsplash.com/photo-1598528738936-c50861cc75a9?auto=format&fit=crop&w=1200&q=85" alt="Beauty products">
+      <div class="hero-badge">new<br><strong>beauty<br>finds</strong></div>
+    </div>
+  </div>
+</section>
+
+<section id="categories" class="container categories">
+  <div class="section-head"><div><p class="eyebrow">SHOP BY CATEGORY</p><h2>Find your beauty thing</h2></div></div>
+  <div class="cat-grid">
+    <button onclick="filterCat('Makeup')">Makeup</button>
+    <button onclick="filterCat('Skincare')">Skincare</button>
+    <button onclick="filterCat('Bodycare')">Bodycare</button>
+    <button onclick="filterCat('Haircare')">Haircare</button>
+    <button onclick="filterCat('Lipcare')">Lipcare</button>
+  </div>
+</section>
+
+<section id="shop" class="container shop">
+  <div class="section-head">
+    <div><p class="eyebrow">CURATED FOR YOU</p><h2>Beauty shelf</h2></div>
+    <div class="tools"><input id="search" type="search" placeholder="Search beauty..." oninput="render()">
+      <select id="sort" onchange="render()"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option></select>
+    </div>
+  </div>
+  <div class="chips"><button class="chip active" onclick="filterCat('All',this)">All</button><button class="chip" onclick="filterCat('Makeup',this)">Makeup</button><button class="chip" onclick="filterCat('Skincare',this)">Skincare</button><button class="chip" onclick="filterCat('Bodycare',this)">Bodycare</button><button class="chip" onclick="filterCat('Haircare',this)">Haircare</button><button class="chip" onclick="filterCat('Lipcare',this)">Lipcare</button></div>
+  <div id="products" class="products"></div>
+</section>
+
+<section id="new" class="pink-banner">
+  <div class="container banner-inner"><div><p class="eyebrow">A LITTLE TREAT FOR YOU</p><h2>New beauty, new mood.</h2><p>Discover feel-good essentials to add to your routine.</p></div><a class="btn light" href="#shop">Explore new in →</a></div>
+</section>
+
+<section id="bestseller" class="container journal">
+  <div><p class="eyebrow">SKIN & THINGS JOURNAL</p><h2>Little beauty notes</h2></div>
+  <div class="notes"><article><span>01</span><h3>Build your simple routine</h3><p>Start with the basics: cleanse, moisturise and protect.</p></article><article><span>02</span><h3>Makeup, but make it easy</h3><p>Pick a few everyday staples you actually enjoy using.</p></article><article><span>03</span><h3>Self-care counts too</h3><p>Hair, body and lips deserve a little love every day.</p></article></div>
+</section>
+</main>
+
+<footer>
+<div class="container footer-grid">
+  <div><a class="logo" href="#"><span>Skin</span> & Things</a><p>Your little online beauty shelf.</p></div>
+  <div><h4>Shop</h4><a href="#shop">Makeup</a><a href="#shop">Skincare</a><a href="#shop">Bodycare</a><a href="#shop">Haircare</a><a href="#shop">Lipcare</a></div>
+  <div><h4>Connect</h4><a href="https://instagram.com/rzkyaa4_" target="_blank">@rzkyaa4_</a><a href="https://wa.me/6285215059711" target="_blank">WhatsApp</a></div>
+</div>
+<div class="copyright container">© 2026 Skin & Things. Made with love.</div>
+</footer>
+
+<div id="cart" class="drawer"><div class="drawer-head"><h3>Your bag</h3><button onclick="closeCart()">×</button></div><div id="cartItems"></div><div class="cart-total"><span>Total</span><strong id="total">Rp0</strong></div><a id="checkout" class="btn wa" target="_blank">Order via WhatsApp</a></div>
+<div id="overlay" onclick="closeCart()"></div>
+<script src="script.js"></script>
+</body></html>
